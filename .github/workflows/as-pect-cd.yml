@@ -1,0 +1,32 @@
+name: as-pect CD
+
+on:
+  release:
+    types: [ published ]
+
+defaults:
+  run:
+    working-directory: packages
+
+jobs:
+  test:
+      uses: ./.github/workflows/as-pect-ci.yml
+
+  publish-latest:
+    needs: test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          registry-url: https://registry.npmjs.org
+
+      - name: publish
+        run: |
+          npm ci
+          npm run build
+          npm publish --access public
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
