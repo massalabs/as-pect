@@ -4,10 +4,6 @@ on:
   release:
     types: [ published ]
 
-defaults:
-  run:
-    working-directory: packages
-
 jobs:
   test:
       uses: ./.github/workflows/as-pect-ci.yml
