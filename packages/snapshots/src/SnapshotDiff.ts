@@ -18,11 +18,12 @@ export class SnapshotDiff {
       // the snapshot exists, NoChange or Different
       if (right.has(key)) {
         const rightValue = right.get(key)!;
-        const lines = diffLines(rightValue, value);
+        const lines = diffLines(rightValue.replace(/\r\n/g, '\n'), value);
+
         const result = new SnapshotDiffResult();
         result.left = value;
         result.right = rightValue;
-        result.type = value === rightValue ? SnapshotDiffResultType.NoChange : SnapshotDiffResultType.Different;
+        result.type = value === rightValue.replace(/\r\n/g, '\n') ? SnapshotDiffResultType.NoChange : SnapshotDiffResultType.Different;
         result.changes = lines;
         this.results.set(key, result);
       } else {
