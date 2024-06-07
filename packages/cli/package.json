@@ -8,10 +8,10 @@
   "types": "lib/index.d.ts",
   "type": "module",
   "scripts": {
-    "rimraf": "rimraf lib/*",
+    "clean": "node ../../clean.js packages/cli/lib",
     "package:version-update": "ncu -u",
     "test": "exit 0",
-    "tsc:cli": "run-s rimraf tsc",
+    "tsc:cli": "run-s clean tsc",
     "tsc": "tsc"
   },
   "bin": {
