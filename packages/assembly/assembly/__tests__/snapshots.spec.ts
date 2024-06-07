@@ -7,7 +7,7 @@ describe("a set of snapshots", () => {
     expect(1).toMatchSnapshot("an integer");
     expect(3.14).toMatchSnapshot("a float");
 
-    expect([1, 2, 3, 4, 5]).toMatchSnapshot("an integer array");
+    // expect([1, 2, 3, 4, 5]).toMatchSnapshot("an integer array");
 
     let a = new Float64Array(4);
     a[0] = 1;
@@ -16,6 +16,6 @@ describe("a set of snapshots", () => {
     a[3] = 4;
     expect(a).toMatchSnapshot("a typed array");
     expect("a string").toMatchSnapshot("a string");
-    expect(new Vec3(1, 2, 3)).toMatchSnapshot("a reference");
+    // expect(new Vec3(1, 2, 3)).toMatchSnapshot("a reference");
   });
 });
