@@ -8,7 +8,7 @@ if ! [ -x "$(command -v node)" ] || ! [ -x "$(command -v npm)" ]; then
 fi
 
 npm ci
-npm run build
+npm run tsc:all
 
 ref=$1
 echo "Publishing packages for reference: $ref"
