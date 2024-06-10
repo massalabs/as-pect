@@ -25,6 +25,9 @@ jobs:
         env:
           GITHUB_REF: ${{ github.ref }}
 
+      - name: Change file permission
+        run: chmod +x ./scripts/publish.sh  
+
       - run: ./scripts/publish.sh ${{ steps.get_tag.outputs.TAG }}
         env:
           NODE_AUTH_TOKEN: ${{ secrets.npm_token }}
