@@ -26,7 +26,7 @@ for packageDir in packages/*; do
         echo "${PACKAGE_NAME}@${PUBLISH_VERSION} is already published. Skipping."
       else
         echo "Publishing ${PACKAGE_NAME}@${PUBLISH_VERSION}"
-        npm publish --workspace="${PACKAGE_NAME##*-}"
+        npm publish --workspace="packages/${PACKAGE_NAME}"
       fi
     else
       echo "Skipping ${PACKAGE_NAME}"
