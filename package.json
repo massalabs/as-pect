@@ -17,14 +17,17 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtenner/aspect.git"
+    "url": "https://github.com/massalabs/as-pect.git"
   },
+  "workspaces": [
+    "packages/cli"
+  ],
   "author": "Joshua Tenner <tenner.joshua@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/jtenner/aspect/issues"
+    "url": "https://github.com/massalabs/as-pect/issues"
   },
-  "homepage": "https://github.com/jtenner/as-pect#readme",
+  "homepage": "https://github.com/massalabs/as-pect#readme",
   "devDependencies": {
     "@as-pect/assembly": "file:./packages/assembly",
     "@as-pect/cli": "file:./packages/cli",

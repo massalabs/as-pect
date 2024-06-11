@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtenner/as-pect/tree/master/packages/cli"
+    "url": "https://github.com/massalabs/as-pect/tree/master/packages/cli"
   },
   "author": "Joshua Tenner <tenner.joshua@gmail.com>",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/jtenner/aspect/issues"
+    "url": "https://github.com/massalabs/as-pect/issues"
   },
-  "homepage": "https://github.com/jtenner/as-pect#readme",
+  "homepage": "https://github.com/massalabs/as-pect#readme",
   "dependencies": {
     "@as-covers/core": "0.4.2",
     "@as-covers/transform": "0.4.2",
