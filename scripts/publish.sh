@@ -24,9 +24,9 @@ for packageDir in packages/*; do
       CURRENT_VERSION=$(npm view "$PACKAGE_NAME" version 2>/dev/null || true)
       if [ "$CURRENT_VERSION" == "$PUBLISH_VERSION" ]; then
         echo "${PACKAGE_NAME}@${PUBLISH_VERSION} is already published. Skipping."
-      else
+      else 
         echo "Publishing ${PACKAGE_NAME}@${PUBLISH_VERSION}"
-        npm publish --workspace="$PACKAGE_NAME"
+        npm publish --workspace=${PACKAGE_NAME##*-}"
       fi
     else
       echo "Skipping ${PACKAGE_NAME}"
