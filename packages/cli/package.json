@@ -1,6 +1,6 @@
 {
-  "name": "@as-pect/cli",
-  "version": "8.1.0",
+  "name": "@massalabs/as-pect-cli",
+  "version": "1.0.0",
   "description": "Write AssemblyScript tests at blazing fast speeds",
   "exports": {
     ".": "./lib/index.js"
@@ -8,10 +8,10 @@
   "types": "lib/index.d.ts",
   "type": "module",
   "scripts": {
-    "rimraf": "rimraf lib/*",
+    "clean": "node ../../clean.js packages/cli/lib",
     "package:version-update": "ncu -u",
     "test": "exit 0",
-    "tsc:cli": "run-s rimraf tsc",
+    "tsc:cli": "run-s clean tsc",
     "tsc": "tsc"
   },
   "bin": {
@@ -20,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jtenner/as-pect/tree/master/packages/cli"
+    "url": "https://github.com/massalabs/as-pect/tree/master/packages/cli"
   },
   "author": "Joshua Tenner <tenner.joshua@gmail.com>",
   "license": "MIT",
@@ -31,9 +31,9 @@
     "cli"
   ],
   "bugs": {
-    "url": "https://github.com/jtenner/aspect/issues"
+    "url": "https://github.com/massalabs/as-pect/issues"
   },
-  "homepage": "https://github.com/jtenner/as-pect#readme",
+  "homepage": "https://github.com/massalabs/as-pect#readme",
   "dependencies": {
     "@as-covers/core": "0.4.2",
     "@as-covers/transform": "0.4.2",

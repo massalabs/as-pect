@@ -27,14 +27,14 @@
     "pretest:pass-fail": "asc --debug --outFile assembly/jest-pass-fail.wasm --textFile assembly/jest-pass-fail.wat --exportStart _start ./assembly/jest-pass-fail.ts ../assembly/assembly/index.ts --transform @as-pect/transform --use ASC_RTRACE=1",
     "pretest:group-filter": "asc --debug --outFile assembly/jest-filter.wasm --textFile assembly/jest-filter.wat --exportStart _start ./assembly/jest-filter.ts ../assembly/assembly/index.ts --transform @as-pect/transform",
     "pretest:log": "asc --debug --outFile assembly/jest-log.wasm --textFile assembly/jest-log.wat --exportStart _start ./assembly/jest-log.ts ../assembly/assembly/index.ts --exportTable --use ASC_RTRACE=1 --transform @as-pect/transform",
-    "rimraf": "rimraf lib/*",
+    "clean": "node ../../clean.js packages/core/lib",
     "test:ci": "node --experimental-wasi-unstable-preview1 --experimental-vm-modules ../../node_modules/jest/bin/jest.js",
     "test": "node --experimental-wasi-unstable-preview1 --experimental-vm-modules ../../node_modules/jest/bin/jest.js",
     "test:log": "node --experimental-wasi-unstable-preview1 --experimental-vm-modules ../../node_modules/jest/bin/jest.js log",
     "asc:all": "run-p pretest:group-filter pretest:log pretest:pass-fail pretest:wasi pretest:reporter-pass pretest:reporter-fail pretest:reporter-flow-error pretest:reporter-snapshot pretest:reporter-top-level-expect",
     "tsc": "tsc",
     "test:update-snapshots": "node --experimental-wasi-unstable-preview1 --experimental-vm-modules ../../node_modules/jest/bin/jest.js -u",
-    "tsc:all": "run-s rimraf tsc asc:all"
+    "tsc:all": "run-s clean tsc asc:all"
   },
   "bugs": {
     "url": "https://github.com/jtenner/aspect/issues"

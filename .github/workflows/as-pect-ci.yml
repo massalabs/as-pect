@@ -1,9 +1,8 @@
 name: Test
 on:
-  push:
-    branches:
-    - master
   pull_request:
+  workflow_call:
+
 jobs:
   check:
     runs-on: ubuntu-latest
@@ -36,10 +35,3 @@ jobs:
       run: npm install
     - name: Test sources
       run: npm run test:ci
-    - name: print coverage data
-      run: echo 'repo_token:' ${{ secrets.COVERALLS_GITHUB_TOKEN }} > ./.coveralls.yml | cat ./packages/core/coverage/lcov.info
-    - name: Coveralls
-      uses: coverallsapp/github-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN }}
-        path-to-lcov: ./packages/core/coverage/lcov.info
